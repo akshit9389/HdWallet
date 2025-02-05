@@ -40,12 +40,23 @@ function Seed() {
         </div>
       )}
       {seedgen && (
-        <div className="w-full flex gap-3 justify-between items-center flex-wrap   min-h-[15vh] p-5 mt-2 border-1 border-zinc-600 rounded-md ">
+        <div className="w-full flex gap-3  items-center flex-wrap   min-h-[15vh] p-5 mt-2 border-1 border-zinc-600 rounded-md ">
           {mnemonic.split(" ").map((m, index) => (
             <Seed1 data={m} />
           ))}
         </div>
       )}
+      {seedgen && (
+        <div className="buttons mt-5">
+        <button className="px-5 py-2 bg-white text-black rounded-xl ciurso">
+          Add SOL Wallet
+        </button>
+        <button className="ml-4 px-5 py-2 bg-white text-black rounded-xl">
+          Add ETH Wallet
+        </button>
+      </div>
+      )}
+      
     </div>
   );
 }
