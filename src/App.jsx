@@ -10,9 +10,9 @@ function App() {
   return (
     <div className='absolute bg-black text-white w-full h-screen '>
       <Nav />
-      { land === true ? <Landing switchL = {setLanding} /> : <Seed />}
-      
-      {/* <Footer /> */}
+      <Landing />
+      <Seed />
+      <Footer />
     </div>
   )
 }
