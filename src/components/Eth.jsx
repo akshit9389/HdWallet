@@ -48,12 +48,17 @@ function Eth({ mnemonic }) {
     }
    return (
      <div className="my-4 mx-5">
-       <button
-         onClick={generateKeys}
-         className="cursor-pointer bg-white text-black px-5 py-2 rounded-md"
-       >
-         Generate Ethereum Wallet
-       </button>
+       <div className='flex gap-4'>
+         <button
+           onClick={generateKeys}
+           className="cursor-pointer bg-white text-black px-5 py-2 rounded-md"
+         >
+           Generate Ethereum Wallet
+         </button>
+         <button className='cursor-pointer bg-white text-black px-5 py-2 rounded-md' onClick={() => setWallets([])}>
+           Clear Wallets
+         </button>
+       </div>
        <h1 className="font-bold text-xl pt-3">Ethereum Wallets</h1>
        <div>
          {wallets.map((wallet, index) => (

@@ -48,9 +48,15 @@ function Solana({mnemonic}) {
     } 
   return (
     <div className='my-4 mx-5'>
-      <button onClick={generateKeys} className="cursor-pointer bg-white text-black px-5 py-2 rounded-md">
+      <div className='flex gap-4'>
+        <button onClick={generateKeys} className="cursor-pointer bg-white text-black px-5 py-2 rounded-md">
         Generate Solana Wallet
       </button>
+        <button className='cursor-pointer bg-white text-black px-5 py-2 rounded-md' onClick={() => setWallets([])}>
+           Clear Wallets
+         </button>
+      </div>
+      
       <h1 className='font-bold text-xl pt-3'>Solana Wallets</h1>
       <div>
         {wallets.map((wallet, index) => (
