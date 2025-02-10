@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Nav from './components/Nav'
 import Landing from './components/Landing'
-import Footer from './components/Footer'
 import Seed from './components/Seed'
 import Wallet from './components/Wallet'
 import Solana from './components/Solana'
+import Eth from './components/Eth'
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Landing />
       <Seed mnemonic={mnemonic} setMnemonic={setMnemonic} setsoleth={setsoleth}  />
       {soleth && <Solana mnemonic={mnemonic} />}
+      {soleth && <Eth mnemonic={mnemonic} />}
       
     </div>
   );

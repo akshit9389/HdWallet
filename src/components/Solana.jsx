@@ -22,7 +22,7 @@ function Solana({mnemonic}) {
       };
       console.log(newWalllet);
           setCurrIndex(currIndex + 1)
-          setWallets([...wallets,newWalllet])
+          setWallets(prevWallets => [...prevWallets, newWalllet])
     }
   const fBalance = async (pk) => {
     try {
@@ -43,12 +43,12 @@ function Solana({mnemonic}) {
     }
     catch{
       console.error("Error fetching balance:", error);
-      return 0;
+      return -1;
     }
     } 
   return (
     <div className='my-4 mx-5'>
-      <button onClick={generateKeys} className="bg-white text-black px-5 py-2 rounded-md">
+      <button onClick={generateKeys} className="cursor-pointer bg-white text-black px-5 py-2 rounded-md">
         Generate Solana Wallet
       </button>
       <h1 className='font-bold text-xl pt-3'>Solana Wallets</h1>
