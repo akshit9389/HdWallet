@@ -2,18 +2,21 @@ import React, { useState } from 'react'
 import { generateMnemonic } from 'bip39';
 import Seed1 from './Seed1';
 
-function Seed() {
-    const [mnemonic, setMnemonic] = useState("")
-    const mnemo = async () => {
-        if (mnemonic.trim() === "") {
-            const mn = await generateMnemonic();
-            setMnemonic(mn);
-        }
-        if(!seedgen){setSeedgen(true)}
+function Seed({ mnemonic, setMnemonic, setsoleth }) {
+  const mnemo = async () => {
+    if (mnemonic.trim() === "") {
+      const mn = await generateMnemonic();
+      setMnemonic(mn);
     }
-    const [seedgen, setSeedgen] = useState(false)
+    if (!seedgen) {
+      setSeedgen(true);
+    }
     
+    setsoleth(true);
     
+  };
+  const [seedgen, setSeedgen] = useState(false);
+
   return (
     <div className="mt-[2.5rem] px-5 ">
       <div className="heading text-[3rem] font-semibold tracking-tighter ">
@@ -46,17 +49,16 @@ function Seed() {
           ))}
         </div>
       )}
-      {seedgen && (
+      {/* {seedgen && (
         <div className="buttons mt-5">
-        <button className="px-5 py-2 bg-white text-black rounded-xl ciurso">
-          Add SOL Wallet
-        </button>
-        <button className="ml-4 px-5 py-2 bg-white text-black rounded-xl">
-          Add ETH Wallet
-        </button>
-      </div>
-      )}
-      
+          <button className="px-5 py-2 bg-white text-black rounded-xl cursor-pointer ">
+            Add SOL Wallet
+          </button>
+          <button className="ml-4 px-5 py-2 bg-white text-black rounded-xl cursor-pointer ">
+            Add ETH Wallet
+          </button>
+        </div>
+      )} */}
     </div>
   );
 }
