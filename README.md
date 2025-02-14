@@ -64,22 +64,6 @@ View your public key, private key, and balance.
 
 Click Clear Wallets to reset.
 
-📌 Folder Structure
-
-Sol-Er/
-│── src/
-│   ├── components/
-│   │   ├── Landing.js  # Main landing page
-│   │   ├── Seed.js     # Mnemonic phrase generator
-│   │   ├── Seed1.js    # Individual seed word display
-│   │   ├── Wallet.js   # Wallet display component
-│   │   ├── Solana.js   # Solana wallet logic
-│   │   ├── Eth.js      # Ethereum wallet logic
-│   ├── App.js          # Main app entry point
-│   ├── index.js        # React DOM entry
-│── package.json        # Dependencies
-│── README.md           # Project Documentation
-
 🛡 Security Notes
 
 Never share your private key.
